@@ -1,0 +1,20 @@
+<h2>Super Hero Registry</h2>
+    <div ng-controller = 'superPoster'>
+        <form>
+          <input type="text" id="aliasIn" ng-model="aliasIn"placeholder="Alias"value="">
+          <input type="text" id="fnameIn" ng-model="fnameIn"placeholder="First Name"value="">
+          <input type="text" id="lnameIn" ng-model="lnameIn"placeholder="Last Name"value="">
+          <input type="text" id="cityIn" ng-model="cityIn"placeholder="City you protect"value="">
+          <select name="power_name" ng-model="power_name">
+            <option value="Invisibility">Invisibility</option>
+            <option value="Flight">Flight</option>
+            <option value="Super Speed">Super Speed</option>
+            <option value="Heat Vision">Heat Vision</option>
+            <option value="Super Strength">Super Strength</option>
+            <option value="Accelerated Healing">Accelerated Healing</option>
+            <option value="Power Blast">Power Blast</option>
+            <option value="Animal Affinity">Animal Affinity</option>
+          </select>
+          <button type="submit" ng-click='superSender()' name="button">Register</button>
+        </form>
+    </div>

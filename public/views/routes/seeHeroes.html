@@ -1,0 +1,15 @@
+<table>
+
+     <tr ng-repeat="hero in allTheHeroes">
+       <td><strong>Hero Alias: </strong> {{hero.alias }}</td>
+       <td><strong>First Name: </strong> {{hero.name }}</td>
+       <td><strong>Last Name: </strong> {{hero.surname}}</td>
+       <td><strong>City: </strong> {{hero.city}}</td>
+       <td><strong>Power: </strong> {{hero.power}} <button type="button" ng-click='deleteHero(response)'name="button">Delete Hero</button></td>
+
+     </tr>
+
+   </table>
+
+
+<button type="button" ng-click='batSignal()'name="button">Help! I need heroes!</button>
