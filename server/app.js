@@ -56,12 +56,12 @@ app.post('/postHero', function(req,res){
 app.delete('/deleteHero', function(req, res) {
       console.log('delete route w:', req.body);
 
-      heroToDB.findOne({alias: req.body.alias}, function(err, userResult) {
+      heroToDB.findOne({_id: req.body.id}, function(err, userResult) {
         if(err){
           console.log(err);
           res.sendStatus(500);
         }else{
-          heroToDB.remove({alias: userResult.alias}, function(err) {});
+          heroToDB.remove({_id: userResult._id}, function(err) {});
           res.sendStatus(200);
         }
       });

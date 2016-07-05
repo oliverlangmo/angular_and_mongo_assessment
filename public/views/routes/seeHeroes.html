@@ -5,7 +5,7 @@
        <td><strong>First Name: </strong> {{hero.name }}</td>
        <td><strong>Last Name: </strong> {{hero.surname}}</td>
        <td><strong>City: </strong> {{hero.city}}</td>
-       <td><strong>Power: </strong> {{hero.power}} <button type="button" ng-click='deleteHero(response)'name="button">Delete Hero</button></td>
+       <td><strong>Power: </strong> {{hero.power}} <button type="button" id="{{hero._id}}" ng-click='deleteHero(response)'name="button">Delete Hero</button></td>
 
      </tr>
 

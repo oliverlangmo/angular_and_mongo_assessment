@@ -42,32 +42,25 @@ myApp.controller('superGetter', ['$scope', '$http',function($scope,$http){
        url:'/callHero',
      }).then(function(response){
        $scope.allTheHeroes = response.data;
-  //      console.log(response.data);
-  //      var objectToDisplay={
-  //        alias: response.data.alias,
-  //        name: response.data.name,
-  //        surname: response.data.surname,
-  //        city: response.data.city,
-  //        power: response.data.power
-  //      };
-  //     console.log(objectToDisplay);
+       console.log(response.data);
      });
    };
 $scope.deleteHero = function(){
-  $http({
-    method: 'GET',
-    url:'/callHero',
-  }).then(function(response){
   var heroToDelete = {
-    alias: response.data.alias
+    id: event.target.id
   };
   console.log(heroToDelete);
   $http({
   method:'DELETE',
   url:'/deleteHero',
-  data: heroToDelete
-}).then($scope.batSignal());
+  data: heroToDelete,
+  headers: {'Content-Type': 'application/json;charset=utf-8'}
+    }).then( function mySuccess( response ) {
+              console.log( response.data ) ;
+          }, function myError( response ) {
+              console.log( response.statusText ) ;
 });
+$scope.batSignal();
 };
 
 
