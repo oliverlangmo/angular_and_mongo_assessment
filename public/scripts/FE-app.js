@@ -2,6 +2,8 @@ console.log('script sourced');
 
 var myApp = angular.module('myApp',['ngRoute']);
 
+
+//routing for views
 myApp.config(["$routeProvider", function($routeProvider){
   $routeProvider.
   when('/home',{
@@ -17,6 +19,7 @@ myApp.config(["$routeProvider", function($routeProvider){
   });
 }]);
 
+//sends hero to DB
 myApp.controller('superPoster', ['$scope', '$http', function($scope,$http){
 
  $scope.superSender = function(){
@@ -35,7 +38,9 @@ $http({
 });
  };
 }]);
-myApp.controller('superGetter', ['$scope', '$http',function($scope,$http){
+
+//Gets hero from DB
+myApp.controller('superGetter', ['$scope', '$http', '$location',function($scope,$http, $location){
  $scope.batSignal = function(){
      $http({
        method: 'GET',
@@ -60,7 +65,7 @@ $scope.deleteHero = function(){
           }, function myError( response ) {
               console.log( response.statusText ) ;
 });
-$scope.batSignal();
+location.reload();
 };
 
 
